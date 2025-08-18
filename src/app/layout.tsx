@@ -54,12 +54,12 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <main>
           <Navigation />
-          <div className="mt-10">
+          <div>
             {children}
           </div>
           <div className="space-y-4 py-2">
             <p className="text-sm sm:text-base text-gray-500 text-center">
-              Dr. Muhammad Abul Hasan • Green University of Bangladesh • Fall 2023
+              Dr. Muhammad Abul Hasan • Green University of Bangladesh • 2025
             </p>
           </div>
         </main>

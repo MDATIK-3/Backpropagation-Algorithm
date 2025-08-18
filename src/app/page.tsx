@@ -13,19 +13,20 @@ export default function HomePage() {
       href: "/gradient-descent",
       color: "from-blue-500 to-blue-600",
     },
+    
+    {
+      title: "Perceptron",
+      desc: "Configure, visualize, and understand the forward pass of a Multi-Layer Perceptron.",
+      icon: Network,
+      href: "/perceptron",
+      color: "from-purple-500 to-purple-600",
+    },
     {
       title: "Toy Exercise",
       desc: "Simple neural network example with interactive animations",
       icon: Brain,
       href: "/toy-exercise",
       color: "from-green-500 to-green-600",
-    },
-    {
-      title: "Generalizing",
-      desc: "Multi-layer network concepts and mathematical derivations",
-      icon: Network,
-      href: "/generalizing",
-      color: "from-purple-500 to-purple-600",
     },
     {
       title: "Backpropagation",
