@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "CSE 411: Understanding Backpropagation - Machine Learning Visualization",
+  title: "Machine Learning Visualization",
   description:
     "Interactive visualization of backpropagation, gradient descent, and neural network concepts for machine learning education.",
   keywords: "backpropagation, machine learning, neural networks, gradient descent, CSE 411, Green University",
@@ -50,7 +50,19 @@ export default function RootLayout({
           integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
           crossOrigin="anonymous"
         ></script>
+
+        {/* ✅ Favicons */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/web-app-manifest-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon/web-app-manifest-512x512.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <meta name="msapplication-TileColor" content="#2d89ef" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
+
       <body className="font-sans antialiased">
         <main>
           <Navigation />
