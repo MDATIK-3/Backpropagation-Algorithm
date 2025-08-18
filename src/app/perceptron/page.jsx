@@ -67,9 +67,9 @@ const NeuronCalculationTooltip = ({ neuronInfo, weights, biases, layerOutputs, a
 
 
 const NeuralNetworkVisualizer = ({
-  inputSize = 3,
+  inputSize = 4,
   hiddenLayers = [4, 3],
-  outputSize = 2,
+  outputSize = 1,
   activation = 'sigmoid'
 }) => {
   const [inputs, setInputs] = useState([]);
@@ -533,7 +533,7 @@ const NetworkConfigurator = () => {
   const presets = [
     { name: "Simple Perceptron", inputSize: 2, hiddenLayers: [], outputSize: 1, activation: 'sigmoid', description: "Basic binary classifier" },
     { name: "XOR Problem", inputSize: 2, hiddenLayers: [3], outputSize: 1, activation: 'tanh', description: "Classic non-linear problem" },
-    { name: "Multi-class", inputSize: 4, hiddenLayers: [8, 4], outputSize: 3, activation: 'softmax', description: "3-class classification example" },
+    { name: "Multi-class", inputSize: 4, hiddenLayers: [4, 2], outputSize: 1, activation: 'softmax', description: "3-class classification example" },
     { name: "Deep Network", inputSize: 3, hiddenLayers: [10, 8, 6], outputSize: 2, activation: 'leaky_relu', description: "A deeper architecture" },
     { name: "Regression", inputSize: 5, hiddenLayers: [12, 8], outputSize: 1, activation: 'linear', description: "Predicting a continuous value" }
   ];

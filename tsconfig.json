@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/shared/math-equation.jsx", "src/app/components/visualizations/training-simulator.tsx", "src/app/components/shared/step-by-step-derivation.tsx", "src/components/ui/toggle.js", "src/app/components/ui/toggle-group.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/shared/math-equation.jsx", "src/app/components/visualizations/training-simulator.tsx", "src/app/components/shared/step-by-step-derivation.tsx", "src/components/ui/toggle.js", "src/app/components/ui/toggle-group.jsx", "src/app/toy-exercise/page.tsx", "src/app/components/visualizations/simple-neural-network.tsx"],
   "exclude": ["node_modules"]
 }
