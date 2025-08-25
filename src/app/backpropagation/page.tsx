@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import PageLayout from "@/app/components/shared/page-layout";
+import BackpropagationIntro from "./components/BackpropagationIntro";
 import IntroductionSection from "./components/IntroductionSection";
 import MathematicalFoundationSection from "./components/MathematicalFoundationSection";
 import ViewToggleSection from "./components/ViewToggleSection";
@@ -13,6 +14,7 @@ export default function BackpropagationPage() {
   const [currentView, setCurrentView] = useState("algorithm");
   return (
     <PageLayout title="Backpropagation Algorithm">
+      <BackpropagationIntro />
       <IntroductionSection />
       <MathematicalFoundationSection />
       <ViewToggleSection
