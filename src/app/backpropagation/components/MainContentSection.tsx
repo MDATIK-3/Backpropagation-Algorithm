@@ -3,7 +3,7 @@ import { GradientDescentSimulator as SimulatorPage } from "@/app/components/visu
 import { motion } from "framer-motion";
 
 interface Props {
-  currentView: "algorithm" | "training";
+  currentView: "algorithm" | "training" | (string & {});
 }
 
 export default function MainContentSection({ currentView }: Props) {

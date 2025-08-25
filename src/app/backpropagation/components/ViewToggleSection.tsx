@@ -3,7 +3,7 @@ import { BookOpen, Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Props {
-  currentView: "algorithm" | "training";
+  currentView: "algorithm" | "training" | (string & {});
   setCurrentView: (view: "algorithm" | "training") => void;
 }
 
