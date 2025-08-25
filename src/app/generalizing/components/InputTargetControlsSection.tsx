@@ -7,12 +7,24 @@ import {
 } from "../../../components/ui/card";
 import { Slider } from "../../../components/ui/slider";
 
+interface NetworkParams {
+  inputs: number[];
+  targets: number[];
+}
+
+interface InputTargetControlsSectionProps {
+  networkParams: NetworkParams;
+  setNetworkParams: React.Dispatch<React.SetStateAction<NetworkParams>>;
+  a3: number[];
+  cost: number;
+}
+
 export default function InputTargetControlsSection({
   networkParams,
   setNetworkParams,
   a3,
   cost,
-}) {
+}: InputTargetControlsSectionProps) {
   return (
     <section>
       <Card>
@@ -56,6 +68,7 @@ export default function InputTargetControlsSection({
                   step={0.1}
                 />
               </div>
+
               <div>
                 <label className="block text-sm font-medium mb-2">
                   Target y₁: {networkParams.targets[0].toFixed(3)}
@@ -91,6 +104,7 @@ export default function InputTargetControlsSection({
                 />
               </div>
             </div>
+
             <div className="bg-gray-50 p-3 rounded-lg flex flex-col justify-center">
               <p className="font-semibold text-sm mb-2">Network Outputs:</p>
               <div className="space-y-1 text-xs font-mono">
