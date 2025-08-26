@@ -40,7 +40,10 @@ export default function GradientDescentIntro() {
               Mathematical Foundation:
             </h4>
             <div className="mb-4 text-center bg-white p-4 rounded-lg shadow-sm">
-              <MathEquation equation="\theta_{new} = \theta_{old} - \eta \nabla J(\theta)" />
+              <MathEquation
+                equation="\theta_{new} = \theta_{old} - \eta \nabla J(\theta)"
+                inline={false}
+              />
             </div>
             <div className="text-emerald-700 leading-relaxed">
               <p className="mb-3 font-semibold">Parameter Breakdown:</p>

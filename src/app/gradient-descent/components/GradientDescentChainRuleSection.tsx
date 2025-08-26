@@ -24,7 +24,10 @@ export default function GradientDescentChainRuleSection() {
               rule:
             </p>
             <div className="bg-white p-6 rounded-xl border-2 border-indigo-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <MathEquation equation="\\frac{d}{dt}f(x(t)) = \\frac{df}{dx} \\cdot \\frac{dx}{dt}" />
+              <MathEquation
+                equation="\\frac{d}{dt}f(x(t)) = \\frac{df}{dx} \\cdot \\frac{dx}{dt}"
+                inline={false}
+              />
             </div>
             <div className="bg-gradient-to-r from-yellow-50 to-amber-50 p-5 rounded-xl border border-yellow-200 hover:shadow-md transition-all duration-300">
               <p className="text-yellow-800 font-semibold mb-2">
@@ -68,7 +71,10 @@ export default function GradientDescentChainRuleSection() {
               </p>
               <div className="space-y-4">
                 <div className="bg-white p-5 rounded-xl border-2 border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <MathEquation equation="z = \\theta_1 x + \\theta_2" />
+                  <MathEquation
+                    equation="z = \\theta_1 x + \\theta_2"
+                    inline={false}
+                  />
                   <div className="flex items-center justify-center mt-3">
                     <Badge className="bg-blue-100 text-blue-800 px-3 py-1">
                       Linear Combination
@@ -79,7 +85,10 @@ export default function GradientDescentChainRuleSection() {
                   </p>
                 </div>
                 <div className="bg-white p-5 rounded-xl border-2 border-green-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <MathEquation equation="y = \\sigma(z) = \\frac{1}{1 + e^{-z}}" />
+                  <MathEquation
+                    equation="y = \\sigma(z) = \\frac{1}{1 + e^{-z}}"
+                    inline={false}
+                  />
                   <div className="flex items-center justify-center mt-3">
                     <Badge className="bg-green-100 text-green-800 px-3 py-1">
                       Sigmoid Activation
@@ -90,7 +99,10 @@ export default function GradientDescentChainRuleSection() {
                   </p>
                 </div>
                 <div className="bg-white p-5 rounded-xl border-2 border-red-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <MathEquation equation="J(\\theta) = \\frac{1}{2}(y - t)^2" />
+                  <MathEquation
+                    equation="J(\\theta) = \\frac{1}{2}(y - t)^2"
+                    inline={false}
+                  />
                   <div className="flex items-center justify-center mt-3">
                     <Badge className="bg-red-100 text-red-800 px-3 py-1">
                       Mean Squared Error

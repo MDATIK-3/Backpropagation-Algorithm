@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -37,6 +37,15 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+.katex-display {
+  display: inline-block !important; /* Don't render as block */
+  white-space: nowrap !important; /* Prevent line wrapping */
+  text-align: center !important; /* Center equation */
+}
+
+.katex {
+  white-space: nowrap !important; /* Prevent wrapping inside KaTeX spans */
 }
 
 .dark {

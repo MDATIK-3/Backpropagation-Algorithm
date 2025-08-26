@@ -28,7 +28,10 @@ export default function GeneralizingIntro() {
                 a key measure of a model&apos;s real-world usefulness.
               </p>
               <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400 flex flex-col items-center">
-                <MathEquation equation="\text{Generalization Error} = \mathbb{E}_{x \sim \mathcal{D}}[L(f(x), y)]" />
+                <MathEquation
+                  equation="\text{Generalization Error} = \mathbb{E}_{x \sim \mathcal{D}}[L(f(x), y)]"
+                  inline={false}
+                />
                 <p className="text-xs text-blue-700 mt-2 text-center">
                   Expected loss on new data distribution
                 </p>
@@ -44,7 +47,10 @@ export default function GeneralizingIntro() {
                 underlying patterns, not just noise.
               </p>
               <div className="bg-white p-4 rounded-lg border-l-4 border-green-400 flex flex-col items-center">
-                <MathEquation equation="L_{\text{train}} \ll L_{\text{test}} \implies \text{Overfitting}" />
+                <MathEquation
+                  equation="L_{\text{train}} \ll L_{\text{test}} \implies \text{Overfitting}"
+                  inline={false}
+                />
                 <p className="text-xs text-green-700 mt-2 text-center">
                   Overfitting: low training loss, high test loss
                 </p>
@@ -59,7 +65,10 @@ export default function GeneralizingIntro() {
                 augmentation help neural networks generalize better:
               </p>
               <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 flex flex-col items-center">
-                <MathEquation equation="J(\theta) = J(\theta) + \lambda \|\theta\|^2" />
+                <MathEquation
+                  equation="J(\theta) = J(\theta) + \lambda \|\theta\|^2"
+                  inline={false}
+                />
                 <p className="text-xs text-yellow-700 mt-2 text-center">
                   Regularization: penalizing large weights
                 </p>

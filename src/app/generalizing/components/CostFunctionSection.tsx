@@ -21,9 +21,13 @@ export default function CostFunctionSection({ cost, errors }) {
               With multiple outputs, we use the mean squared error across all
               output neurons:
             </p>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <MathEquation equation="J(\\theta) = \\frac{1}{2m} \\sum_{i=1}^{m} (y_i - a_i^{(3)})^2" />
+            <div className="bg-gray-50 p-4 rounded-lg flex justify-center">
+              <MathEquation
+                equation="J(\\theta) = \\frac{1}{2m} \\sum_{i=1}^{m} (y_i - a_i^{(3)})^2"
+                inline={false}
+              />
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               <div>
                 <Badge className="bg-blue-100 text-blue-800 mb-2">

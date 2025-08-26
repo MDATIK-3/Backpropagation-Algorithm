@@ -1,0 +1,226 @@
+import React from "react";
+
+const BasicPerceptron = () => (
+  <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-8 mb-8">
+    <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+      Single Layer Perceptron
+    </h1>
+
+    <div className="mb-8">
+      <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <span className="inline-block w-1 h-6 bg-blue-500 rounded-full"></span>
+        Definition
+      </h2>
+      <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+        <p className="text-slate-700 leading-relaxed space-y-2">
+          <span className="block">• A perceptron is the simplest type of artificial neural network introduced by Frank Rosenblatt (1958).</span>
+          <span className="block">• It is mainly used for binary classification problems (e.g., YES/NO, +1/−1).</span>
+          <span className="block">• It mimics the behavior of a biological neuron by taking inputs, applying weights, summing them, applying an activation function, and producing an output decision.</span>
+        </p>
+      </div>
+    </div>
+
+    <div className="mb-8">
+      <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <span className="inline-block w-1 h-6 bg-blue-500 rounded-full"></span>
+        Mathematical Model
+      </h2>
+      <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="space-y-3">
+            <div className="font-medium">
+              <span className="text-blue-600">Input vector:</span>
+              <span className="font-mono ml-2">x = [x₁, x₂, ..., xₙ]</span>
+            </div>
+            <div className="font-medium">
+              <span className="text-blue-600">Weight vector:</span>
+              <span className="font-mono ml-2">w = [w₁, w₂, ..., wₙ]</span>
+            </div>
+            <div className="font-medium">
+              <span className="text-blue-600">Bias:</span>
+              <span className="font-mono ml-2">b</span>
+            </div>
+          </div>
+          <div className="space-y-3">
+            <div className="font-medium">
+              <span className="text-blue-600">Net input:</span>
+              <span className="font-mono ml-2">z = Σᵢ wᵢxᵢ + b</span>
+            </div>
+            <div className="font-medium">
+              <span className="text-blue-600">Activation function:</span>
+              <div className="font-mono mt-2 pl-4 border-l-2 border-blue-200">
+                y = f(z) = {'{'}
+                <br />
+                <span className="pl-4">1, if z ≥ 0</span>
+                <br />
+                <span className="pl-4">0, if z &lt; 0</span>
+                <br />
+                {'}'}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="mb-8">
+      <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <span className="inline-block w-1 h-6 bg-blue-500 rounded-full"></span>
+        Structure
+      </h2>
+      <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+        <ul className="list-none space-y-2">
+          <li className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <span className="font-medium">Inputs: <span className="font-mono">x₁, x₂, ..., xₙ</span></span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <span className="font-medium">Weights: <span className="font-mono">w₁, w₂, ..., wₙ</span></span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <span className="font-medium">Summation function: computes <span className="font-mono">z = w ⋅ x + b</span></span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <span className="font-medium">Activation function: step function</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <span className="font-medium">Output: single value <span className="font-mono">y ∈ {'{'}0, 1{'}'}</span></span>
+          </li>
+        </ul>
+        <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-blue-700 text-sm">
+          Diagram: Inputs → Weights → Summation → Step Function → Output
+        </div>
+      </div>
+    </div>
+
+    <div className="mb-8">
+      <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <span className="inline-block w-1 h-6 bg-blue-500 rounded-full"></span>
+        Training Algorithm
+      </h2>
+      <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+        <ol className="list-decimal list-inside space-y-4">
+          <li className="text-slate-700">
+            Initialize weights wᵢ and bias b (usually small random values or zeros)
+          </li>
+          <li className="text-slate-700">
+            For each training example (x, d):
+            <ul className="list-disc list-inside ml-6 mt-2 space-y-2 text-slate-600">
+              <li>Compute output: <span className="font-mono">y = f(w ⋅ x + b)</span></li>
+              <li>Update weights: <span className="font-mono">wᵢ ← wᵢ + η(d − y)xᵢ</span></li>
+              <li>Update bias: <span className="font-mono">b ← b + η(d − y)</span></li>
+            </ul>
+          </li>
+          <li className="text-slate-700">
+            Repeat until convergence or max iterations
+          </li>
+        </ol>
+        <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <p className="text-yellow-800">
+            where:
+            <span className="font-mono ml-2">d = desired output,</span>
+            <span className="font-mono ml-2">y = predicted output,</span>
+            <span className="font-mono ml-2">η = learning rate</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="mb-8">
+      <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <span className="inline-block w-1 h-6 bg-blue-500 rounded-full"></span>
+        Example: AND Gate
+      </h2>
+      <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+        <div className="overflow-x-auto">
+          <table className="min-w-full table-auto">
+            <thead>
+              <tr className="bg-blue-50 text-blue-600">
+                <th className="px-6 py-3 border border-slate-200">x₁</th>
+                <th className="px-6 py-3 border border-slate-200">x₂</th>
+                <th className="px-6 py-3 border border-slate-200">Output (d)</th>
+              </tr>
+            </thead>
+            <tbody className="text-slate-700">
+              <tr>
+                <td className="px-6 py-3 border border-slate-200 text-center">0</td>
+                <td className="px-6 py-3 border border-slate-200 text-center">0</td>
+                <td className="px-6 py-3 border border-slate-200 text-center">0</td>
+              </tr>
+              <tr>
+                <td className="px-6 py-3 border border-slate-200 text-center">0</td>
+                <td className="px-6 py-3 border border-slate-200 text-center">1</td>
+                <td className="px-6 py-3 border border-slate-200 text-center">0</td>
+              </tr>
+              <tr>
+                <td className="px-6 py-3 border border-slate-200 text-center">1</td>
+                <td className="px-6 py-3 border border-slate-200 text-center">0</td>
+                <td className="px-6 py-3 border border-slate-200 text-center">0</td>
+              </tr>
+              <tr>
+                <td className="px-6 py-3 border border-slate-200 text-center">1</td>
+                <td className="px-6 py-3 border border-slate-200 text-center">1</td>
+                <td className="px-6 py-3 border border-slate-200 text-center">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-slate-600">
+          Training will adjust weights such that the perceptron produces correct outputs.
+        </p>
+      </div>
+    </div>
+
+    <div className="mb-8">
+      <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <span className="inline-block w-1 h-6 bg-blue-500 rounded-full"></span>
+        Convergence Property
+      </h2>
+      <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+        <ul className="list-none space-y-3">
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></span>
+            <span className="text-slate-700">If data is linearly separable, the perceptron is guaranteed to converge to a perfect solution in a finite number of steps.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></span>
+            <span className="text-slate-700">If data is not linearly separable (e.g., XOR problem), the perceptron will never converge and will keep oscillating.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <span className="inline-block w-1 h-6 bg-blue-500 rounded-full"></span>
+        Limitations
+      </h2>
+      <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+        <ul className="list-none space-y-3">
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></span>
+            <span className="text-slate-700">Can only solve linearly separable problems (fails on XOR).</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></span>
+            <span className="text-slate-700">Step activation is not differentiable → cannot use gradient descent.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></span>
+            <span className="text-slate-700">No probability output (just hard classification).</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></span>
+            <span className="text-slate-700">Sensitive to noisy data and outliers.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+);
+
+export default BasicPerceptron;
