@@ -8,7 +8,15 @@ import {
 import MathEquation from "../../components/shared/math-equation";
 import { Badge } from "../../../components/ui/badge";
 
-export default function CostFunctionSection({ cost, errors }) {
+interface CostFunctionSectionProps {
+  cost: number;
+  errors: [number, number];
+}
+
+export default function CostFunctionSection({
+  cost,
+  errors,
+}: CostFunctionSectionProps) {
   return (
     <section>
       <Card>

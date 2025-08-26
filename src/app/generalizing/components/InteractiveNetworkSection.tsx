@@ -9,17 +9,30 @@ import { Button } from "../../../components/ui/button";
 import { Play, RotateCcw } from "lucide-react";
 import dynamic from "next/dynamic";
 
-const MultiLayerNetwork = dynamic(
-  () => import("../../components/visualizations/multi-layer-network"),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full text-center py-8 text-gray-400">
-        Loading network visualization...
-      </div>
-    ),
-  }
-) as React.ComponentType<any>;
+interface MultiLayerNetworkProps {
+  inputs: number[];
+  weightsLayer1: number[][];
+  weightsLayer2: number[][];
+  targets: number[];
+  animationStep: number;
+  isAnimating: boolean;
+  style?: React.CSSProperties;
+}
+
+const MultiLayerNetwork = dynamic(() => import("../../components/visualizations/multi-layer-network"), { ssr: false, loading: () => (<div className="w-full text-center py-8 text-gray-400"> Loading network visualization... </div>), }) as React.ComponentType<MultiLayerNetworkProps>;
+
+interface InteractiveNetworkSectionProps {
+  networkParams: {
+    inputs: number[];
+    weightsLayer1: number[][];
+    weightsLayer2: number[][];
+    targets: number[];
+  };
+  animationStep: number;
+  isAnimating: boolean;
+  startAnimation: () => void;
+  resetAnimation: () => void;
+}
 
 export default function InteractiveNetworkSection({
   networkParams,
@@ -27,7 +40,7 @@ export default function InteractiveNetworkSection({
   isAnimating,
   startAnimation,
   resetAnimation,
-}) {
+}: InteractiveNetworkSectionProps) {
   return (
     <section>
       <Card>
