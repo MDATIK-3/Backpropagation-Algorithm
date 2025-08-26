@@ -60,13 +60,13 @@ export default function MasteringBackpropagationSection() {
               background: [
                 "linear-gradient(to right, rgb(79, 70, 229), rgb(37, 99, 235))",
                 "linear-gradient(to right, rgb(37, 99, 235), rgb(79, 70, 229))",
-                "linear-gradient(to right, rgb(79, 70, 229), rgb(37, 99, 235))",
-              ],
+                "linear-gradient(to right, rgb(79, 70, 229), rgb(37, 99, 235))"
+              ]
             }}
             transition={{
               duration: 3,
               repeat: Infinity,
-              ease: "linear",
+              ease: "linear"
             }}
           >
             <CardHeader className="text-white">
@@ -99,7 +99,7 @@ export default function MasteringBackpropagationSection() {
                   transition={{
                     type: "spring",
                     stiffness: 300,
-                    damping: 20,
+                    damping: 20
                   }}
                 >
                   <motion.div
