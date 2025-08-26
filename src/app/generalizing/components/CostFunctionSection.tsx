@@ -5,7 +5,7 @@ import {
   CardTitle,
   CardContent,
 } from "../../../components/ui/card";
-import MathEquation from "../../../components/shared/math-equation.jsx";
+import MathEquation from "../../components/shared/math-equation";
 import { Badge } from "../../../components/ui/badge";
 
 export default function CostFunctionSection({ cost, errors }) {

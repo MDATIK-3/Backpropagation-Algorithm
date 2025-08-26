@@ -10,7 +10,7 @@ import { Play, RotateCcw } from "lucide-react";
 import dynamic from "next/dynamic";
 
 const MultiLayerNetwork = dynamic(
-  () => import("../../../components/visualizations/multi-layer-network"),
+  () => import("../../components/visualizations/multi-layer-network"),
   {
     ssr: false,
     loading: () => (
