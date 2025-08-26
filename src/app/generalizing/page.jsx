@@ -6,6 +6,7 @@ import CostFunctionSection from "./components/CostFunctionSection";
 import InteractiveNetworkSection from "./components/InteractiveNetworkSection";
 import InputTargetControlsSection from "./components/InputTargetControlsSection";
 import NetworkComplexitySection from "./components/NetworkComplexitySection";
+import WeightMatrixSection from "./components/WeightMatrixSection";
 import ViewToggle from "./components/ViewToggle";
 import ViewContent from "./components/ViewContent";
 import SummarySection from "./components/SummarySection";
@@ -50,27 +51,21 @@ export default function GeneralizingPage() {
 
   const z2 = [
     networkParams.weightsLayer1[0][0] * networkParams.inputs[0] +
-    networkParams.weightsLayer1[0][1] * networkParams.inputs[1],
+      networkParams.weightsLayer1[0][1] * networkParams.inputs[1],
     networkParams.weightsLayer1[1][0] * networkParams.inputs[0] +
-    networkParams.weightsLayer1[1][1] * networkParams.inputs[1],
+      networkParams.weightsLayer1[1][1] * networkParams.inputs[1],
   ];
 
-  const a2 = [
-    1 / (1 + Math.exp(-z2[0])),
-    1 / (1 + Math.exp(-z2[1])),
-  ];
+  const a2 = [1 / (1 + Math.exp(-z2[0])), 1 / (1 + Math.exp(-z2[1]))];
 
   const z3 = [
     networkParams.weightsLayer2[0][0] * a2[0] +
-    networkParams.weightsLayer2[0][1] * a2[1],
+      networkParams.weightsLayer2[0][1] * a2[1],
     networkParams.weightsLayer2[1][0] * a2[0] +
-    networkParams.weightsLayer2[1][1] * a2[1],
+      networkParams.weightsLayer2[1][1] * a2[1],
   ];
 
-  const a3 = [
-    1 / (1 + Math.exp(-z3[0])),
-    1 / (1 + Math.exp(-z3[1])),
-  ];
+  const a3 = [1 / (1 + Math.exp(-z3[0])), 1 / (1 + Math.exp(-z3[1]))];
 
   const errors = [
     a3[0] - networkParams.targets[0],
@@ -87,6 +82,7 @@ export default function GeneralizingPage() {
       <div className="space-y-12">
         <GeneralizingIntro />
         <NetworkComplexitySection />
+        <WeightMatrixSection />
         <CostFunctionSection cost={cost} errors={errors} />
         <InteractiveNetworkSection
           networkParams={networkParams}

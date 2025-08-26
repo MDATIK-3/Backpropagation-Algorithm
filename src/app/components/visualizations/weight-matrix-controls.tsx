@@ -1,16 +1,20 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Slider } from "@/components/ui/slider"
-import { Badge } from "@/components/ui/badge"
-import MathEquation from "@/app/components/shared/math-equation"
-import { CodeIcon as Matrix, Layers } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Slider } from "@/components/ui/slider";
+import { Badge } from "@/components/ui/badge";
+import MathEquation from "@/app/components/shared/math-equation";
+import { CodeIcon as Matrix, Layers } from "lucide-react";
 
 interface WeightMatrixControlsProps {
-  weightsLayer1: [[number, number], [number, number]]
-  weightsLayer2: [[number, number], [number, number]]
-  onWeightsLayer1Change: (weights: [[number, number], [number, number]]) => void
-  onWeightsLayer2Change: (weights: [[number, number], [number, number]]) => void
+  weightsLayer1: [[number, number], [number, number]];
+  weightsLayer2: [[number, number], [number, number]];
+  onWeightsLayer1Change: (
+    weights: [[number, number], [number, number]]
+  ) => void;
+  onWeightsLayer2Change: (
+    weights: [[number, number], [number, number]]
+  ) => void;
 }
 
 export default function WeightMatrixControls({
@@ -21,17 +25,21 @@ export default function WeightMatrixControls({
 }: WeightMatrixControlsProps) {
   const updateWeight1 = (i: number, j: number, value: number) => {
     const newWeights = weightsLayer1.map((row, rowIndex) =>
-      row.map((weight, colIndex) => (rowIndex === i && colIndex === j ? value : weight)),
-    ) as [[number, number], [number, number]]
-    onWeightsLayer1Change(newWeights)
-  }
+      row.map((weight, colIndex) =>
+        rowIndex === i && colIndex === j ? value : weight
+      )
+    ) as [[number, number], [number, number]];
+    onWeightsLayer1Change(newWeights);
+  };
 
   const updateWeight2 = (i: number, j: number, value: number) => {
     const newWeights = weightsLayer2.map((row, rowIndex) =>
-      row.map((weight, colIndex) => (rowIndex === i && colIndex === j ? value : weight)),
-    ) as [[number, number], [number, number]]
-    onWeightsLayer2Change(newWeights)
-  }
+      row.map((weight, colIndex) =>
+        rowIndex === i && colIndex === j ? value : weight
+      )
+    ) as [[number, number], [number, number]];
+    onWeightsLayer2Change(newWeights);
+  };
 
   return (
     <div className="space-y-6">
@@ -47,8 +55,15 @@ export default function WeightMatrixControls({
           <div className="space-y-4">
             <div className="bg-blue-50 p-4 rounded-lg">
               <p className="text-sm text-blue-800 mb-2">Matrix notation:</p>
-              <MathEquation equation="\\Theta^{(1)} = \\begin{bmatrix} \\theta^{(1)}_{11} & \\theta^{(1)}_{12} \\\\ \\theta^{(1)}_{21} & \\theta^{(1)}_{22} \\end{bmatrix}" />
-              <p className="text-xs text-blue-700 text-center mt-2">θ⁽¹⁾ᵢⱼ: weight from input j to hidden neuron i</p>
+              <div className="font-mono text-purple-800 text-center whitespace-pre-wrap leading-loose">
+                {`Θ¹ = ⎡ θ₁₁  θ₁₂ ⎤
+     ⎢ θ₂₁  θ₂₂ ⎥
+               `}
+              </div>
+              {/* <MathEquation equation="Θ(1)=[θ11(1)​θ21(1)​​θ12(1)​θ22(1)​​]" /> */}
+              <p className="text-xs text-blue-700 text-center mt-2">
+                θ⁽¹⁾ᵢⱼ: weight from input j to hidden neuron i
+              </p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -72,7 +87,7 @@ export default function WeightMatrixControls({
                       <span>2.0</span>
                     </div>
                   </div>
-                )),
+                ))
               )}
             </div>
 
@@ -108,7 +123,11 @@ export default function WeightMatrixControls({
           <div className="space-y-4">
             <div className="bg-purple-50 p-4 rounded-lg">
               <p className="text-sm text-purple-800 mb-2">Matrix notation:</p>
-              <MathEquation equation="\\Theta^{(2)} = \\begin{bmatrix} \\theta^{(2)}_{11} & \\theta^{(2)}_{12} \\\\ \\theta^{(2)}_{21} & \\theta^{(2)}_{22} \\end{bmatrix}" />
+              {/* <MathEquation equation="\\Theta^{(2)} = \\begin{bmatrix} \\theta^{(2)}_{11} & \\theta^{(2)}_{12} \\\\ \\theta^{(2)}_{21} & \\theta^{(2)}_{22} \\end{bmatrix}" /> */}
+              <div className="font-mono text-purple-800 text-center whitespace-pre-wrap leading-loose">
+                {`Θ^(2) = ⎡ θ^(2)₁₁   θ^(2)₁₂ ⎤
+           ⎢ θ^(2)₂₁   θ^(2)₂₂ ⎥`}
+              </div>
               <p className="text-xs text-purple-700 text-center mt-2">
                 θ⁽²⁾ᵢⱼ: weight from hidden neuron j to output i
               </p>
@@ -135,7 +154,7 @@ export default function WeightMatrixControls({
                       <span>2.0</span>
                     </div>
                   </div>
-                )),
+                ))
               )}
             </div>
 
@@ -159,5 +178,5 @@ export default function WeightMatrixControls({
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

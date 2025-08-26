@@ -17,9 +17,9 @@ export default function GeneralizingIntro() {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.15
-      }
-    }
+        staggerChildren: 0.15,
+      },
+    },
   };
 
   const itemVariants: Variants = {
@@ -27,8 +27,8 @@ export default function GeneralizingIntro() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   return (
@@ -55,7 +55,7 @@ export default function GeneralizingIntro() {
                 well on unseen data, not just the data it was trained on. It is
                 a key measure of a model&apos;s real-world usefulness.
               </p>
-              <motion.div 
+              <motion.div
                 className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400 flex flex-col items-center"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -63,6 +63,8 @@ export default function GeneralizingIntro() {
                 <MathEquation
                   equation="\text{Generalization Error} = \mathbb{E}_{x \sim \mathcal{D}}[L(f(x), y)]"
                   inline={false}
+                  size="large"
+                  className="equation-block equation-blue"
                 />
                 <p className="text-xs text-blue-700 mt-2 text-center">
                   Expected loss on new data distribution
@@ -78,15 +80,19 @@ export default function GeneralizingIntro() {
                 said to overfit. Generalization ensures the model captures
                 underlying patterns, not just noise.
               </p>
-              <motion.div 
+              <motion.div
                 className="bg-white p-4 rounded-lg border-l-4 border-green-400 flex flex-col items-center"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <MathEquation
-                  equation="L_{\text{train}} \ll L_{\text{test}} \implies \text{Overfitting}"
-                  inline={false}
-                />
+                <div className="w-full overflow-x-auto">
+                  <MathEquation
+                    equation="L_{\text{train}} \ll L_{\text{test}} \implies \text{Overfitting}"
+                    inline={false}
+                    size="large"
+                    className="equation-block equation-green"
+                  />
+                </div>
                 <p className="text-xs text-green-700 mt-2 text-center">
                   Overfitting: low training loss, high test loss
                 </p>
@@ -100,15 +106,19 @@ export default function GeneralizingIntro() {
                 Techniques such as regularization, dropout, and data
                 augmentation help neural networks generalize better:
               </p>
-              <motion.div 
+              <motion.div
                 className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 flex flex-col items-center"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <MathEquation
-                  equation="J(\theta) = J(\theta) + \lambda \|\theta\|^2"
-                  inline={false}
-                />
+                <div className="w-full overflow-x-auto">
+                  <MathEquation
+                    equation="J(\theta) = J(\theta) + \lambda \|\theta\|^2"
+                    inline={false}
+                    size="large"
+                    className="equation-block equation-yellow"
+                  />
+                </div>
                 <p className="text-xs text-yellow-700 mt-2 text-center">
                   Regularization: penalizing large weights
                 </p>

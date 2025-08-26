@@ -18,9 +18,9 @@ export default function NetworkComplexitySection() {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.15
-      }
-    }
+        staggerChildren: 0.15,
+      },
+    },
   };
 
   const itemVariants: Variants = {
@@ -28,16 +28,12 @@ export default function NetworkComplexitySection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
+    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center">
@@ -46,15 +42,21 @@ export default function NetworkComplexitySection() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" variants={containerVariants}>
-            <motion.div className="md:col-span-2 flex flex-col gap-4" variants={itemVariants}>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            variants={containerVariants}
+          >
+            <motion.div
+              className="md:col-span-2 flex flex-col gap-4"
+              variants={itemVariants}
+            >
               <p className="text-gray-700 leading-relaxed mb-4">
                 Moving beyond the simple toy example, we now explore networks
                 with multiple neurons in each layer. This introduces weight
                 matrices, multiple gradient paths, and the need to sum gradients
                 from different routes through the network.
               </p>
-              <motion.div 
+              <motion.div
                 className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -72,7 +74,10 @@ export default function NetworkComplexitySection() {
                 </ul>
               </motion.div>
             </motion.div>
-            <motion.div className="flex flex-col gap-3 items-center justify-center" variants={itemVariants}>
+            <motion.div
+              className="flex flex-col gap-3 items-center justify-center"
+              variants={itemVariants}
+            >
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
@@ -106,7 +111,7 @@ export default function NetworkComplexitySection() {
                 </Badge>
               </motion.div>
               {/* Network visualization */}
-              <motion.div 
+              <motion.div
                 className="w-full bg-white p-6 rounded-xl shadow-lg mt-4"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -118,23 +123,47 @@ export default function NetworkComplexitySection() {
                 >
                   {/* Input Layer */}
                   <g>
-                    <circle cx="50" cy="80" r="15" fill="#86efac" /> {/* Green */}
+                    <circle cx="50" cy="80" r="15" fill="#86efac" />{" "}
+                    {/* Green */}
                     <circle cx="50" cy="170" r="15" fill="#86efac" />
-                    <text x="20" y="40" className="text-sm font-semibold" fill="#166534">Input Layer</text>
+                    <text
+                      x="20"
+                      y="40"
+                      className="text-sm font-semibold"
+                      fill="#166534"
+                    >
+                      Input Layer
+                    </text>
                   </g>
 
                   {/* Hidden Layer */}
                   <g>
-                    <circle cx="200" cy="80" r="15" fill="#fde047" /> {/* Yellow */}
+                    <circle cx="200" cy="80" r="15" fill="#fde047" />{" "}
+                    {/* Yellow */}
                     <circle cx="200" cy="170" r="15" fill="#fde047" />
-                    <text x="165" y="40" className="text-sm font-semibold" fill="#854d0e">Hidden Layer</text>
+                    <text
+                      x="165"
+                      y="40"
+                      className="text-sm font-semibold"
+                      fill="#854d0e"
+                    >
+                      Hidden Layer
+                    </text>
                   </g>
 
                   {/* Output Layer */}
                   <g>
-                    <circle cx="350" cy="80" r="15" fill="#fca5a5" /> {/* Red */}
+                    <circle cx="350" cy="80" r="15" fill="#fca5a5" />{" "}
+                    {/* Red */}
                     <circle cx="350" cy="170" r="15" fill="#fca5a5" />
-                    <text x="320" y="40" className="text-sm font-semibold" fill="#991b1b">Output Layer</text>
+                    <text
+                      x="320"
+                      y="40"
+                      className="text-sm font-semibold"
+                      fill="#991b1b"
+                    >
+                      Output Layer
+                    </text>
                   </g>
 
                   {/* Connections from input to hidden layer */}

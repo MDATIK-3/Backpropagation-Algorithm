@@ -26,9 +26,9 @@ export default function CostFunctionSection({
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.15
-      }
-    }
+        staggerChildren: 0.15,
+      },
+    },
   };
 
   const itemVariants: Variants = {
@@ -36,16 +36,12 @@ export default function CostFunctionSection({
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
+    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
       <Card>
         <CardHeader>
           <CardTitle>Mean Squared Error for Multiple Outputs</CardTitle>
@@ -57,19 +53,25 @@ export default function CostFunctionSection({
                 With multiple outputs, we use the mean squared error across all
                 output neurons:
               </p>
-              <motion.div 
+              <motion.div
                 className="bg-gray-50 p-4 rounded-lg flex justify-center"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <MathEquation
+                {/* <MathEquation
                   equation="J(\\theta) = \\frac{1}{2m} \\sum_{i=1}^{m} (y_i - a_i^{(3)})^2"
                   inline={false}
-                />
+                /> */}
+                <div className="font-mono text-red-600 text-center whitespace-pre-wrap leading-loose">
+                  {`J(θ) = (1 / 2m) Σᵢ₌₁ᵐ (yᵢ - aᵢ^(3))²`}
+                </div>
               </motion.div>
             </motion.div>
 
-            <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center" variants={itemVariants}>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center"
+              variants={itemVariants}
+            >
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}

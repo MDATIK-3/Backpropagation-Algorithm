@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "katex/dist/katex.min.css";
-import "@/app/styles/equations.css";
-import katex from "katex";
+import 'katex/dist/katex.min.css';
+import "@/app/styles/math-equation.css";
+import katex from 'katex';
 
 export default function MathEquation({
   equation,
   inline = true,
-  className = "equation-block equation-scroll",
-  size = "normal",
+  className = "math-container",
 }) {
   const [rendered, setRendered] = useState("");
   const [error, setError] = useState(null);
@@ -40,18 +39,9 @@ export default function MathEquation({
     );
   }
 
-  const sizeClass =
-    {
-      small: "equation-small",
-      normal: "",
-      large: "equation-large",
-    }[size] || "";
-
   return (
     <div
-      className={`equation-wrapper ${className} ${
-        inline ? "inline-flex" : "block"
-      } ${sizeClass}`}
+      className={`equation-wrapper ${className} ${inline ? 'inline-flex' : 'block'}`}
       dangerouslySetInnerHTML={{ __html: rendered }}
     />
   );
