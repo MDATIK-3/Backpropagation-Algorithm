@@ -7,7 +7,19 @@ import {
 } from "../../../components/ui/card";
 import { Button } from "../../../components/ui/button";
 import { Play, RotateCcw } from "lucide-react";
-import MultiLayerNetwork from "../../../components/visualizations/multi-layer-network";
+import dynamic from "next/dynamic";
+
+const MultiLayerNetwork = dynamic(
+  () => import("../../../components/visualizations/multi-layer-network"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full text-center py-8 text-gray-400">
+        Loading network visualization...
+      </div>
+    ),
+  }
+) as React.ComponentType<any>;
 
 export default function InteractiveNetworkSection({
   networkParams,
