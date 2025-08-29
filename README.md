@@ -45,7 +45,7 @@ An interactive platform for visualizing and understanding machine learning conce
 
 ```bash
 # Clone the repository
-git clone [https://github.com/yourusername/ml-algo-visualization.git](https://github.com/MDATIK-3/Backpropagation-Algorithm/)
+git clone https://github.com/MDATIK-3/Backpropagation-Algorithm/
 
 # Navigate to project directory
 cd my-app
