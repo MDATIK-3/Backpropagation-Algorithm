@@ -2,7 +2,8 @@
 
 An interactive platform for visualizing and understanding machine learning concepts, specifically designed for CSE 411. This project features intuitive visualizations for gradient descent, perceptrons, and neural network concepts.
 
-![Project Banner](public/banner.png)
+<img width="1920" height="1341" alt="screencapture-mlgub-vercel-app-2025-08-29-22_18_39" src="https://github.com/user-attachments/assets/5954cda7-6b54-4382-928b-117d27fc6028" />
+
 
 ## ✨ Key Features
 
@@ -44,7 +45,7 @@ An interactive platform for visualizing and understanding machine learning conce
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ml-algo-visualization.git
+git clone [https://github.com/yourusername/ml-algo-visualization.git](https://github.com/MDATIK-3/Backpropagation-Algorithm/)
 
 # Navigate to project directory
 cd my-app
@@ -113,7 +114,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- Your Name - *Initial work* - [@yourusername](https://github.com/yourusername)
+- Md Atik - *Initial work* - [@MdAtik-3](https://github.com/MDATIK-3)
 
 ## 🙏 Acknowledgments
 
@@ -124,5 +125,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-- Email: your.email@example.com
-- Project Link: https://github.com/yourusername/ml-algo-visualization
+- Email: atikh4335@gmail.com 
+- Project Link: https://github.com/MDATIK-3/Backpropagation-Algorithm/
